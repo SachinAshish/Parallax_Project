@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-x:hidden;/* Agar hme left right movement krni website ki jb jyada conntent aa jaye to uske liye use krenge yeh hm*/
+    overflow-y: auto;
+    perspective: 10px;/*for 3D use */
+}
+
+.container{
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height:100%;
+    transform-style: preserve-3d;/*Batane ke liye hm 3D ka game is container mein khelenge*/
+    z-index: -1; /* USed foro overlapping of two or more images or content*/
+
+}
+.background{
+    transform: translateZ(-40px) scale(5);/*Door bhej dega image ko bg wali ko magar image bhut choti dikhegi .To fir uske liye scale krna padega */
+  
+}
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+.background, .foreground{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;/*   Iska mtlb hai ki ek layer ke upar ek layer Isilye adventure upar aa gya as a layer image ke upar .Agar positioning kr rakhi hai to z index kr dena*/
+    object-fit: cover;/*Fit image in container */
+
+}
+
+h1{
+    position: absolute;
+    top: 3rem;
+    font-size: 10rem;
+    color: white;
+    letter-spacing: 4px;
+    text-shadow: 2 2 4px rgba(0,0,0,0.4);
+
+}
+
+section{
+        background-color: rgb(45,45, 45);
+        color: white;
+        padding:5rem 0;
+    top: 20%;
+}
+.secHeading{
+    font-size: 5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+
+}
+
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    height: 10rem;
+
+}
+
+.bg{
+position: relative;
+width:100%;
+background-attachment: fixed;/*Used to fix the image It does not move .We can easily scroll over it.*/
+background-position: center;/*To center the image */
+background-size: cover;/*To make image proper fit in the given height and width */
+
+height: 500px;
+
+
+}
+.desc{
+ position: absolute;   
+ background-color: white;
+ padding: 0.5rem 2.5rem;
+ top: 40%;
+ left: 60%;
+ transform: translate(-50%) translateX(-50%);
+ color: black;
+ font-size: 3.5rem;
+ font-weight: 600px;
+
+}
+
+.bg1{
+    background-image: url(basketball.avif);
+}
+.bg2{
+    background-image: url(cycling.avif);
+}
+.bg3{
+    background-image: url(football.avif);
+    
+}
